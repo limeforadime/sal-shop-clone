@@ -1,0 +1,38 @@
+.breadcrumbs {
+    a {
+        text-decoration: none;
+    }
+
+    a:link {
+        // unvisited link 
+        color: #0114b2;
+    }
+
+    a:visited {
+        color: #000742;
+    }
+
+    li {
+        padding-right: .5em;
+        letter-spacing: 1px;
+        list-style: none;
+        font-weight: bold;
+        font-size: .9em;
+        display: inline;
+    }
+
+    li:nth-child(even) {
+        font-weight: normal;
+    }
+}
+.flex-container--breadcrumbs-bar {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @include atMedium {
+            display: flex;
+            text-align: initial;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+}

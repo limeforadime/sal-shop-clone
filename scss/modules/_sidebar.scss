@@ -1,0 +1,27 @@
+.sidebar {
+    width: 100%;
+    flex-direction: row;
+    @include atSmall {
+        flex-direction: row;
+    }
+    @include atMedium {
+
+    }
+    @include atLarge {
+        flex-direction: column;
+        flex-basis: 100%;
+        max-width: 20%;
+        margin: 0 3.2rem 0 0;
+        
+    }
+
+    &__section > a {
+        font-size: .9rem;
+        text-decoration: none;
+        color: black;
+    }
+    &__section > a:hover {
+        color: $pink-hover;
+        transition: all .3s;
+    }
+}
