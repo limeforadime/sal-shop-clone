@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "sass": "echo Watching Sass files... && node-sass --watch --recursive scss/ -o dist/css/"
+    "sass": "echo Watching Sass files... && node-sass --watch --recursive app/scss/ -o app/assets/css/"
   },
   "author": "dave",
   "license": "ISC",
