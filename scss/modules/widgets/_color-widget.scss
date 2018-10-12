@@ -1,0 +1,39 @@
+
+.color-widget {
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.color-widget > a {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.color-widget.color-widget--black {
+    background-color: black;
+}
+
+.color-widget.color-widget--blue {
+    background-color: blue;
+}
+
+.color-widget.color-widget--gray {
+    background-color: #ccc;
+}
+
+.color-widget.color-widget--green {
+    background-color: green;
+}
+
+.color-widget.color-widget--red {
+    background-color: red;
+}
+
+.color-widget.color-widget--purple {
+    background-color: purple;
+}

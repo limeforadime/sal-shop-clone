@@ -1,0 +1,6 @@
+{
+    "css": {
+        "allowed_file_extensions": ["css", "scss", "sass", "less"],
+        "space_around_combinator": true
+    }
+}

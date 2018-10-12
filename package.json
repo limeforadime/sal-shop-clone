@@ -1,0 +1,17 @@
+{
+  "name": "salient_shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "sass": "echo Watching Sass files... && node-sass --watch --recursive scss/ -o dist/css/"
+  },
+  "author": "dave",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  },
+  "dependencies": {
+    "node-sass-chokidar": "^1.3.4"
+  }
+}

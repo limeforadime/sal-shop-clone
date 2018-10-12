@@ -1,0 +1,18 @@
+.banner {
+    line-height: 2rem;
+    width: 100%;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("https://images.unsplash.com/photo-1495428453346-d1472ff933f2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9&s=fb9c35e17ece0e98fc54503cf0284800");
+    background-size: cover;
+    background-position: bottom;
+
+    .banner__title {
+        font-size: 3rem;
+        margin-bottom: 1.3rem;
+        letter-spacing: 1px;
+    }
+}
