@@ -14,13 +14,37 @@ header {
     color: #fff;
 }
 
-.content-wrapper {
-    max-width: 86%;
-    margin: auto;
-}
 .site-container {
-    margin: 25px;
+    margin: 0;
     background-color: rgba(240, 240, 240, 0.4);
+    @include atSmall {
+        // margin: 0 25px;
+    }
+    @include atLarge {
+        margin: 25px;
+    }
+}
+
+.content-wrapper {
+    max-width: 380px;
+    padding: 0 15px;
+    margin: auto;
+    @include atSmall {
+        padding: 0 4%;
+        max-width: 620px;
+    }
+    @include atMedium {
+        padding: 0 2%;
+        max-width: 760px;
+    }
+    @include atLarge {
+        padding: 0 8%;
+        width: 100%;
+        max-width: 1500px;
+    }
+    @include atXtraLarge {
+        padding: 0 5%;
+    }
 }
 
 .flex-container--main-content {
@@ -63,7 +87,6 @@ hr {
         }
     }
 }
-.results {
-    font-size: .95em;
-    color: #888;
+.hidden {
+    display: none;
 }

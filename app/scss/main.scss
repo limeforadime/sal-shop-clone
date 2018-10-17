@@ -3,9 +3,9 @@
 @import './base/variables';
 @import './base/global';
 // modules
+@import './modules/modal';
 @import './modules/banner';
 @import './modules/breadcrumbs';
-@import './modules/icons';
 @import './modules/navbar';
 @import './modules/sidebar';
 @import './modules/results-gallery';
@@ -13,4 +13,3 @@
 @import './modules/widgets/color-widget';
 @import './modules/widgets/quantity-badge';
 @import './modules/widgets/slider';
-@import './modules/widgets/sort-combobox';

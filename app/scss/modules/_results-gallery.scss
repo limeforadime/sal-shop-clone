@@ -1,45 +1,67 @@
 .results-gallery {
-    max-width: 80%;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-content: stretch;
+    margin-top: 15px;
+    @include atMedium {
+        margin: auto;
+    }
+    @include atLarge {
+        flex: 3;
+    }
 }
 
 .gallery-element {
+    display: flex;
     background-color: white;
     padding: 30px;
-    max-height: 30%;
-    margin-bottom: 0.5%;
-    display: flex;
+    height: 300px;
+    margin: 20px 0;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 5px;
     box-shadow: 2px 10px 50px 10px rgba(40, 40, 40, .1);
     transition: all .2s;
-
-    &__img-wrapper {
-        height: 200px;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    &__img {
-        max-width: 100%;
-    }
-
     @include atSmall {
-        flex-basis: 100%;
+        flex-basis: 49%;
+        height: 350px;
+        margin: 5px 0;
     }
     @include atMedium {
         flex-basis: 49%;
         margin-bottom: 2%;
     }
     @include atLarge {
+        margin-bottom: 6%;
+        max-height: 400px;
+        margin-bottom: 0.5%;
+    }
+    @include atXtraLarge {
         flex-basis: 32%;
         margin-bottom: 2%;
         max-height: 400px;
+        margin-bottom: 0.5%;
     }
+    &__img-wrapper {
+        // height: 100%;
+        width: 80%;
+        margin: auto;
+        // max-width: 100%;
+        overflow: hidden;
+        @include atSmall {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        // height: 100%;
+    }
+
+    
 }
 
 .gallery-element:hover {

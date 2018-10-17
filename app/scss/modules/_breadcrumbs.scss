@@ -1,15 +1,13 @@
 .breadcrumbs {
     a {
         text-decoration: none;
-    }
-
-    a:link {
-        // unvisited link 
-        color: #0114b2;
-    }
-
-    a:visited {
-        color: #000742;
+        &:link {
+            // unvisited link 
+            color: #0114b2;
+        }
+        &:visited {
+            color: #000742;
+        }
     }
 
     li {
@@ -17,22 +15,64 @@
         letter-spacing: 1px;
         list-style: none;
         font-weight: bold;
-        font-size: .9em;
+        font-size: .75em;
         display: inline;
+        @include atSmall {
+            font-size: .9rem;
+        }
     }
 
     li:nth-child(even) {
         font-weight: normal;
     }
+    
+    
 }
 .flex-container--breadcrumbs-bar {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include atSmall {
+        justify-content: space-between;
+    }
+    @include atMedium {
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        @include atMedium {
-            display: flex;
-            text-align: initial;
-            flex-direction: row;
-            justify-content: space-between;
+        text-align: initial;
+        flex-direction: row;
+    }
+    .results-and-combo--wrapper {
+        display: flex;
+        
+    }
+    .results {
+        font-size: .8rem;
+        color: #888;
+        @include atSmall {
+            font-size: .9rem;
         }
+    }
+    .sort-combobox {
+        color: black;
+        font-weight: bold;
+        border: 0;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0);
+        height: 30px;
+        outline: none;
+        transition: all .3s;
+        text-align-last: center;
+    }
+    
+    .sort-combobox:hover {
+        color: white;
+        background-color: $pink-hover;
+    }
+    
+    option {
+        color: black;
+        font-weight: bold;
+        background-color: #ddd;
+        height: 30px;
+    }
 }

@@ -1,5 +1,5 @@
 @mixin atSmall {
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: 530px) {
         @content;
     }
 }
@@ -10,6 +10,11 @@
 }
 @mixin atLarge {
     @media only screen and (min-width: 1010px) {
+        @content;
+    }
+}
+@mixin atXtraLarge {
+    @media only screen and (min-width: 1400px) {
         @content;
     }
 }

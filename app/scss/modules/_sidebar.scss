@@ -9,19 +9,36 @@
     }
     @include atLarge {
         flex-direction: column;
-        flex-basis: 100%;
+        flex: 1;
         max-width: 20%;
         margin: 0 3.2rem 0 0;
-        
     }
+    @include atXtraLarge {
+        // max-width: 30%;
+        margin: 0 3.2rem 0 0;
+    }
+    &__section {
 
-    &__section > a {
-        font-size: .9rem;
-        text-decoration: none;
-        color: black;
-    }
-    &__section > a:hover {
-        color: $pink-hover;
-        transition: all .3s;
+        &--title {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        margin-bottom: 1rem;
+        @include atLarge {
+            margin-bottom: 2.2rem;
+        }
+        .product-category__label {
+            margin: .4rem 0;
+        }
+        & > a {
+            font-size: 1rem;
+            text-decoration: none;
+            color: black;
+            &:hover {
+                color: $pink-hover;
+                transition: all .3s;
+            }
+        }
     }
 }

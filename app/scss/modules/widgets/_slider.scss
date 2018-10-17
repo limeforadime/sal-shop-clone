@@ -1,9 +1,12 @@
 #slider-range {
-    height: 7px;
-    margin: 15px 0 10px 8px;
-    width: 90%;
+    height: 5px;
+    margin: 20px 0 20px 8px;
+    width: 97%;
     background-color: #ddd;
     border: none;
+    @include atLarge {
+        width: 90%;
+    }
 
     .ui-slider-handle {
         background-color: red;

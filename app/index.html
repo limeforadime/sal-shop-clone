@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Salient: The Shop</title>
+  <title>LimesForDimes</title>
   <meta name="description" content="A copy of Salient's design: The Shop ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -12,6 +12,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/components/button.min.css">
 
@@ -21,26 +22,34 @@
   <div class="site-container">
     <!--Banner and navbar-->
     <header>
+      <div class="modal"></div>
       <nav class="navbar at-page-top">
         <div class="flex-container--navbar ">
-          <div class="logo">Salient</div>
-          <div class="nav-buttons text-shadow">
+          <div class="navbar__logo">LimeLite</div>
+          <div class="navbar__buttons text-shadow">
             <a href="#" class="btn ">Home</a>
             <a href="#" class="btn">Shop</a>
             <a href="#" class="btn">Contact</a>
             <a href="#" class="btn">Demos</a>
           </div>
-          <div class="icon-buttons text-shadow">
+          <div class="navbar__icon-buttons">
             <a href="#"><i class="fas fa-search"></i></a>
             <a href="#"><i class="fas fa-user"></i></a>
             <a href="#"><i class="fas fa-shopping-bag"></i></a>
+            <a href="#">
+              <div class="navbar__menu-icon">
+                <div class="navbar__menu-icon__bar"></div>
+                <div class="navbar__menu-icon__bar"></div>
+                <div class="navbar__menu-icon__bar"></div>
+              </div>
+            </a>
           </div>
         </div>
       </nav>
       <div class="banner">
         <!--<div class="banner__img"></div>-->
         <h1 class="banner__title text-shadow">The Shop</h1>
-        <h4 class="banner__subtitle text-shadow">Affordable Designer Clothing With Unmatched Quality</h4>
+        <span class="banner__subtitle text-shadow">Affordable Designer Clothing With Unmatched Quality</span>
       </div>
     </header>
     
@@ -51,16 +60,18 @@
         <li>></li>
         <a href="#"><li>Shop</li></a>
       </div>
-      <div class="flex-container--align-center">
-        <div class="results">Showing 1-12 of 17 results</div>
+      <div class="results-and-combo--wrapper">
+        <div class="flex-container--align-center">
+          <div class="results">Showing 1-12 of 17 results</div>
+        </div>
+        <select class="sort-combobox">
+          <option value="popularity">Sort by popularity</option>
+          <option value="new">Sort by newness</option>
+          <option value="rating">Sort by average rating</option>
+          <option value="lowToHigh">Sort by price: low to high</option>
+          <option value="highToLow">Sort by price: high to low</option>
+        </select>
       </div>
-      <select class="sort-combobox">
-        <option value="popularity">Sort by popularity</option>
-        <option value="new">Sort by newness</option>
-        <option value="rating">Sort by average rating</option>
-        <option value="lowToHigh">Sort by price: low to high</option>
-        <option value="highToLow">Sort by price: high to low</option>
-      </select>
     </div>
     
     <!--Flexwrap container for sidebar and gallery-->
@@ -70,7 +81,7 @@
         <!--SIDEBAR-->
         <aside class="sidebar">
           <section class="sidebar__section">
-            <h3 class="sidebar__section-title">Filter By Price</h3>
+            <h3 class="sidebar__section--title">Filter By Price</h3>
             <div id="slider-range">
               <div class="ui-slider-handle"></div>
             </div>
@@ -83,7 +94,7 @@
             </div>
           </section>
           <section class="sidebar__section">
-            <h3 class="sidebar__section-title">Color</h3>
+            <h3 class="sidebar__section--title">Color</h3>
             <a href="#"><div class="color-widget color-widget--black"></div></a>
             <a href="#"><div class="color-widget color-widget--blue"></div></a>
             <a href="#"><div class="color-widget color-widget--gray"></div></a>
@@ -92,15 +103,15 @@
             <a href="#"><div class="color-widget color-widget--purple"></div></a>
           </section>
           <section class="sidebar__section">
-            <h3 class="sidebar__section-title">Product Categories</h3>
+            <h3 class="sidebar__section--title">Product Categories</h3>
             
-            <a href="#"><h2 class="product-category__label">Basic T-Shirts<span class="quantity-badge">6</span></h2></a>
-            <a href="#"><h2 class="product-category__label">Casual T-Shirts<span class="quantity-badge">3</span></h2></a>
-            <a href="#"><h2 class="product-category__label">Cool Clothing<span class="quantity-badge">6</span></h2></a>
-            <a href="#"><h2 class="product-category__label">Fresh Accessories<span class="quantity-badge">8</span></h2></a>
-            <a href="#"><h2 class="product-category__label">Hipster Style<span class="quantity-badge">5</span></h2></a>
-            <a href="#"><h2 class="product-category__label">Outerwear<span class="quantity-badge">2</span></h2></a>
-            <a href="#"><h2 class="product-category__label">Sport Clothing<span class="quantity-badge">4</span></h2></a>
+            <a href="#"><h4 class="product-category__label">Basic T-Shirts<span class="quantity-badge">6</span></h4></a>
+            <a href="#"><h4 class="product-category__label">Casual T-Shirts<span class="quantity-badge">3</span></h4></a>
+            <a href="#"><h4 class="product-category__label">Cool Clothing<span class="quantity-badge">6</span></h4></a>
+            <a href="#"><h4 class="product-category__label">Fresh Accessories<span class="quantity-badge">8</span></h4></a>
+            <a href="#"><h4 class="product-category__label">Hipster Style<span class="quantity-badge">5</span></h4></a>
+            <a href="#"><h4 class="product-category__label">Outerwear<span class="quantity-badge">2</span></h4></a>
+            <a href="#"><h4 class="product-category__label">Sport Clothing<span class="quantity-badge">4</span></h4></a>
             
           </section>
         </aside>
@@ -216,7 +227,11 @@
     /* global $ */
     $(function() {
       var navbar = document.querySelector('nav.navbar');
+      var menuIcon = document.querySelector('.navbar__menu-icon');
+      var navLinks = document.querySelector('.navbar__buttons');
+      var modal = document.querySelector('.modal');
       window.addEventListener('scroll', transformNavbarOnScroll);
+      menuIcon.addEventListener('click', showNavLinks);
       
       function transformNavbarOnScroll() {
         if (window.pageYOffset >= 1) {
@@ -225,7 +240,18 @@
           navbar.classList.add("at-page-top");
         }
       }
-      
+      function showNavLinks() {
+        if (navLinks.classList.contains('responsive')) {
+          navLinks.classList.remove('responsive');
+          menuIcon.classList.remove('close');
+          modal.classList.remove('modal--active');
+        } else {
+          navLinks.classList.add('responsive');
+          // menuIcon
+          modal.classList.add('modal--active')
+        }
+        
+      }
       // var handle = $('#custom-handle');
       $('#slider-range').slider({
         range: true,
@@ -233,7 +259,7 @@
         step: 1,
         min: 5,
         max: 50,
-        values: [5, 30],
+        values: [5, 50],
         slide: function(event, ui) {
           $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
         },

@@ -1,40 +1,113 @@
-nav {
-    .flex-container--navbar {
-        padding: 25px 20px;
-        display: flex;
-        color: #fff;
-        justify-content: space-between;
-        align-items: center;
+.navbar {
+    z-index: 5;
+    width: 100%;
+    height: 3.5rem;
+    position: fixed;
+    background-color: #fff;
+    @include atMedium {
+        height: 4rem;
     }
 
-    &.navbar {
-        width: 100%;
-        position: fixed;
+    .flex-container--navbar {
+        display: flex;
+        height: 100%;
+        color: #000;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px 10px 20px;
+        @include atLarge {
+            padding: 25px 20px;
+            color: #fff;
+        }
+    }
+    @include atLarge {
         transform: scale(1);
         left: 0;
         margin: auto;
+        color: #fff;
         background-color: rgba(30, 30, 30, 0.8);
         background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(50, 50, 50, .2));
-        transition: all .3s ease-in-out;
-        transform: translateY(-30px);
-
-        .logo {
-            font-size: 2rem;
-            font-style: italic;
-        }
-
-        &.at-page-top {
+        transition: all .1s ease-out;
+        transform: translateY(-25px); 
+    }
+    &.at-page-top {
+        @include atLarge {
             background-color: transparent;
             background-image: none;
             transform: scale(.95);
-            transition: all .3s ease-in-out;
+            transition: all .35s ease-out;
         }
+    }
+    &__logo {
+        font-size: 1.45rem;
+        line-height: 1.2rem;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        @include atSmall {
+            font-size: 1.8rem;
+        }
+        @include atMedium {
+            font-size: 2rem;
+        }
+    }
 
-        .nav-buttons > a {
+    &__buttons {
+        display: none;
+        @include atLarge {
+            display: block;
+        }
+    }
+    &__buttons > a {
+        color: inherit;
+        font-size: 1rem;
+        text-decoration: none;
+        @include atLarge {
+            margin: 0 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+    }
+    &__buttons.responsive {
+        background-color: red;
+        display: block;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
+    }
+    &__icon-buttons {
+        display: flex;
+        align-items: center;
+        & > a {
             color: inherit;
-            margin: 0 10px;
-            text-decoration: none;
             font-size: 1.1rem;
+            font-weight: 100;
+            margin: 0 1rem;
+            @include atSmall {
+                font-size: 1.5rem;
+                font-weight: 800;
+            }
+        }
+    }
+    &__menu-icon {
+        z-index: 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+        height: 16px;
+        width: 24px;
+        margin-left: 5px;
+        @include atLarge {
+            display: none;
+        }
+        &__bar {
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            border-radius: 25%;
         }
     }
 }
