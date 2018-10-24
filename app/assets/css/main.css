@@ -83,7 +83,8 @@ hr {
   height: 100vh;
   position: fixed;
   z-index: -1;
-  background-color: transparent; }
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color .6s; }
   .modal--active {
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5); }
@@ -192,7 +193,7 @@ hr {
     height: 30px; }
 
 .navbar {
-  z-index: 5;
+  z-index: 10;
   width: 100%;
   height: 3.5rem;
   position: fixed;
@@ -200,6 +201,16 @@ hr {
   @media only screen and (min-width: 800px) {
     .navbar {
       height: 4rem; } }
+  @media only screen and (min-width: 1010px) {
+    .navbar {
+      transform: scale(1);
+      left: 0;
+      margin: auto;
+      color: #fff;
+      background-color: rgba(30, 30, 30, 0.8);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.2));
+      transition: all .1s ease-out;
+      transform: translateY(-25px); } }
   .navbar .flex-container--navbar {
     display: flex;
     height: 100%;
@@ -212,19 +223,10 @@ hr {
         padding: 25px 20px;
         color: #fff; } }
   @media only screen and (min-width: 1010px) {
-    .navbar {
-      transform: scale(1);
-      left: 0;
-      margin: auto;
-      color: #fff;
-      background-color: rgba(30, 30, 30, 0.8);
-      background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.2));
-      transition: all .1s ease-out;
-      transform: translateY(-25px); } }
-  @media only screen and (min-width: 1010px) {
     .navbar.at-page-top {
       background-color: transparent;
       background-image: none;
+      align-items: center;
       transform: scale(0.95);
       transition: all .35s ease-out; } }
   .navbar__logo {
@@ -239,49 +241,97 @@ hr {
       .navbar__logo {
         font-size: 2rem; } }
   .navbar__buttons {
-    display: none; }
+    max-height: 0;
+    visibility: hidden;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 6;
+    width: 100%;
+    top: 3.5rem;
+    right: 0;
+    transition: all .3s; }
+    @media only screen and (min-width: 800px) {
+      .navbar__buttons {
+        width: 50%;
+        top: 4rem; } }
     @media only screen and (min-width: 1010px) {
       .navbar__buttons {
-        display: block; } }
-  .navbar__buttons > a {
+        max-height: 100px;
+        position: initial;
+        top: initial;
+        right: initial;
+        background-color: transparent;
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        transition: none; } }
+    .navbar__buttons.responsive {
+      max-height: 270px;
+      width: 100%;
+      transition: all .4s ease-in-out; }
+      @media only screen and (min-width: 800px) {
+        .navbar__buttons.responsive {
+          width: 50%;
+          top: 4rem; } }
+      @media only screen and (min-width: 1010px) {
+        .navbar__buttons.responsive {
+          display: none; } }
+  .navbar__buttons--item {
     color: inherit;
     font-size: 1rem;
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: white;
+    text-shadow: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    border-bottom: solid 1px black;
+    padding: 1rem 8rem; }
     @media only screen and (min-width: 1010px) {
-      .navbar__buttons > a {
+      .navbar__buttons--item {
+        background-color: initial;
+        flex-wrap: nowrap;
+        border: none;
+        padding: initial;
         margin: 0 2rem;
         font-size: 1.2rem;
         font-weight: 700; } }
-  .navbar__buttons.responsive {
-    background-color: red;
-    display: block;
-    position: fixed;
-    z-index: 4;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 50vw; }
+    .navbar__buttons--item.responsive {
+      width: 100%;
+      flex: 1;
+      visibility: visible; }
+      .navbar__buttons--item.responsive:first-child {
+        border-top: none; }
+      .navbar__buttons--item.responsive:last-child {
+        border-bottom: none; }
   .navbar__icon-buttons {
     display: flex;
     align-items: center; }
-    .navbar__icon-buttons > a {
+    .navbar__icon-buttons--item {
       color: inherit;
       font-size: 1.1rem;
       font-weight: 100;
       margin: 0 1rem; }
       @media only screen and (min-width: 530px) {
-        .navbar__icon-buttons > a {
+        .navbar__icon-buttons--item {
           font-size: 1.5rem;
-          font-weight: 800; } }
+          font-weight: 400; } }
   .navbar__menu-icon {
     z-index: 11;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    height: 16px;
-    width: 24px;
-    margin-left: 5px; }
+    height: 18px;
+    width: 28px;
+    margin-left: .9rem; }
     @media only screen and (min-width: 1010px) {
       .navbar__menu-icon {
         display: none; } }

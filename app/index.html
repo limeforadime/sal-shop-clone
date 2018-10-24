@@ -27,22 +27,20 @@
         <div class="flex-container--navbar ">
           <div class="navbar__logo">LimeLite</div>
           <div class="navbar__buttons text-shadow">
-            <a href="#" class="btn ">Home</a>
-            <a href="#" class="btn">Shop</a>
-            <a href="#" class="btn">Contact</a>
-            <a href="#" class="btn">Demos</a>
+            <a href="#" id="btn--home" class="navbar__buttons--item">Home</a>
+            <a href="#" id="btn--shop" class="navbar__buttons--item">Shop</a>
+            <a href="#" id="btn--contact" class="navbar__buttons--item">Contact</a>
+            <a href="#" id="btn--demos" class="navbar__buttons--item">Demos</a>
           </div>
           <div class="navbar__icon-buttons">
-            <a href="#"><i class="fas fa-search"></i></a>
-            <a href="#"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-shopping-bag"></i></a>
-            <a href="#">
-              <div class="navbar__menu-icon">
-                <div class="navbar__menu-icon__bar"></div>
-                <div class="navbar__menu-icon__bar"></div>
-                <div class="navbar__menu-icon__bar"></div>
-              </div>
-            </a>
+            <a href="#" class="navbar__icon-buttons--item"><i class="fas fa-search"></i></a>
+            <a href="#" class="navbar__icon-buttons--item"><i class="fas fa-user"></i></a>
+            <a href="#" class="navbar__icon-buttons--item"><i class="fas fa-shopping-bag"></i></a>
+            <div class="navbar__icon-buttons--item navbar__menu-icon">
+              <div class="navbar__menu-icon__bar"></div>
+              <div class="navbar__menu-icon__bar"></div>
+              <div class="navbar__menu-icon__bar"></div>
+            </div>
           </div>
         </div>
       </nav>
@@ -228,10 +226,11 @@
     $(function() {
       var navbar = document.querySelector('nav.navbar');
       var menuIcon = document.querySelector('.navbar__menu-icon');
-      var navLinks = document.querySelector('.navbar__buttons');
+      var navbarButtonsWrapper = document.querySelector('.navbar__buttons');
+      var navbarButtons = document.querySelectorAll('.navbar__buttons--item')
       var modal = document.querySelector('.modal');
       window.addEventListener('scroll', transformNavbarOnScroll);
-      menuIcon.addEventListener('click', showNavLinks);
+      menuIcon.addEventListener('click', showNavLinksEvent);
       
       function transformNavbarOnScroll() {
         if (window.pageYOffset >= 1) {
@@ -240,13 +239,19 @@
           navbar.classList.add("at-page-top");
         }
       }
-      function showNavLinks() {
-        if (navLinks.classList.contains('responsive')) {
-          navLinks.classList.remove('responsive');
+      function showNavLinksEvent() {
+        if (navbarButtonsWrapper.classList.contains('responsive')) {
+          navbarButtonsWrapper.classList.remove('responsive');
+          for (let item of navbarButtons) {
+            item.classList.remove('responsive');
+          }
           menuIcon.classList.remove('close');
           modal.classList.remove('modal--active');
         } else {
-          navLinks.classList.add('responsive');
+          navbarButtonsWrapper.classList.add('responsive');
+          for (let item of navbarButtons) {
+            item.classList.add('responsive');
+          }
           // menuIcon
           modal.classList.add('modal--active')
         }

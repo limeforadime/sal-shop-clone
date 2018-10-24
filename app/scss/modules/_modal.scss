@@ -3,9 +3,13 @@
     height: 100vh;
     position: fixed;
     z-index: -1;
-    background-color: transparent;
+    background-color: rgba(0,0,0, 0);
+    transition: background-color .6s;
     &--active {
+        // width: 100vw;
+        // height: 100vh;
         z-index: 10;
         background-color: rgba(0,0,0,.5);
+        // transition: background-color .6s;
     }
 }
