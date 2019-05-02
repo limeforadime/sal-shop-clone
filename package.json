@@ -9,7 +9,9 @@
   "author": "dave",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.9.3"
+    "node-gyp": "^4.0.0",
+    "node-sass": "^4.12.0",
+    "tar": "^4.4.8"
   },
   "dependencies": {
     "node-sass-chokidar": "^1.3.4"
